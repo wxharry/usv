@@ -155,7 +155,7 @@ Page({
         
       },
     })*/
-    this.onReady()
+    // this.onReady()//自动更新
   },
 
   /**
