@@ -1949,6 +1949,8 @@ Charts.prototype.updateData = function () {
     this.opts.series = data.series || this.opts.series;
     this.opts.categories = data.categories || this.opts.categories;
 
+    this.opts.yAxis = data.yAxis || this.opts.yAxis;//改变y轴的取值范围
+
     this.opts.title = assign({}, this.opts.title, data.title || {});
     this.opts.subtitle = assign({}, this.opts.subtitle, data.subtitle || {});
 

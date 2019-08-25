@@ -108,18 +108,18 @@ Page({
   onReady: function () {
     var that = this
 
-    setTimeout(function () {
-      that.setData({
-        "markers[0].longitude": that.data.markers[0].longitude + 0.000001,
-        "markers[0].latitude": that.data.markers[0].latitude,
-        "map.longitude": that.data.map.longitude + 0.000001,
-        "map.latitude": that.data.map.latitude
-      })//要延时执行的代码
-      console.log(that.data.markers[0].longitude)
-    }, 1500) //延迟时间 这里是1秒
+    // setTimeout(function () {
+    //   that.setData({
+    //     "markers[0].longitude": that.data.markers[0].longitude + 0.000001,
+    //     "markers[0].latitude": that.data.markers[0].latitude,
+    //     "map.longitude": that.data.map.longitude + 0.000001,
+    //     "map.latitude": that.data.map.latitude
+    //   })//要延时执行的代码
+    //   console.log(that.data.markers[0].longitude)
+    // }, 1500) //延迟时间 这里是1秒
 
-    /*wx.request({ //需要实时更新把他打开，测试用就没打开
-      url: 'http://172.20.10.5:8000/show_data/',
+    wx.request({ 
+      url: 'http://183.199.190.129:8000/show_data/',
       data: '',
       header: {},
       method: 'GET',
@@ -154,7 +154,7 @@ Page({
       complete: function (res) {
         
       },
-    })*/
+    })
     // this.onReady()//自动更新
   },
 
