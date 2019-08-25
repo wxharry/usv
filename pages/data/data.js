@@ -197,5 +197,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  navigateTo:function(){
+    wx.navigateTo({
+      url: '../charts/charts',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   }
 })

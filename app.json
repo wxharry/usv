@@ -1,14 +1,14 @@
 {
   "pages": [
+    "pages/data/data",
     "pages/charts/charts",
     "pages/index/index",
-    "pages/data/data",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F17878",
-    "navigationBarTitleText": "荆棘鸟号 demo",
+    "navigationBarTitleText": "荆棘鸟号",
     "navigationBarTextStyle": "black"
   },
   "permission": {

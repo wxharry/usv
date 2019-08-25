@@ -11,3 +11,7 @@ https://blog.csdn.net/weixin_41075012/article/details/100056624
 
 图标来源
 https://www.iconfont.cn
+
+TODO list:
+to finish chart.wxml & chart.wxss
+

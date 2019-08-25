@@ -21,4 +21,6 @@
       </view>
     </view>
   </view>
+  <navigator class="nav-type" url="../charts/charts">绘制折线图</navigator>
+  <!-- <image class="nav-type" bindtap="navigateTo" src="../../images/lineChart.png"></image> -->
 </view>

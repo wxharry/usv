@@ -93,7 +93,7 @@ Page({
       type: 'line',
       enableScroll:true,
       categories: simulationData.categories,
-      animation: false,//记得打开动画
+      animation: true,//记得打开动画
       // background: '#f5f5f5',
       series: [{//可显示多条数据的折现
           name: '成交量1',

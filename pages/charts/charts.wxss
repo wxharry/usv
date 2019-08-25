@@ -7,9 +7,8 @@
 .btnContainer{
   display: inline-flex;
   width: 100%;
-  margin: 20rpx;
+  margin: 50rpx;
   padding-right:0; 
-  
   /* height: 80rpx; */
   /* position: absolute; */
 }
