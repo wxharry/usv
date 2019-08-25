@@ -5,12 +5,11 @@
 }
 
 .btnContainer{
+  /* position: fixed; */
+  /* float: right; */
   display: inline-flex;
   width: 100%;
   margin: 50rpx;
-  padding-right:0; 
-  /* height: 80rpx; */
-  /* position: absolute; */
 }
 .btn{
   width: 80rpx;
@@ -19,11 +18,47 @@
   margin: 0;
   /* margin-right: 0; */
 }
-
 .img-type{
   line-height: 80rpx;
   width: 50rpx;
   height: 50rpx;
   margin: 0;
   padding: 0;
+}
+
+.para-container{
+  position: fixed;
+  padding: 0 35rpx;
+  /* top: 667rpx; */
+  top:620rpx;
+  left: 0rpx;
+  width: 750rpx;
+  display: block;
+}
+
+.para-item{
+  width: 300rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  margin: 10rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  padding: 15rpx;
+  background-color: rgba(241, 120, 120, 0.04);
+  border-radius: 20rpx;
+}
+
+.texts{
+  display: inline;
+}
+
+.text-type{
+  padding: 50rpx;
+  text-align: center;
+}
+
+.status-type{
+  float: right;
+  line-height: 40rpx;
+  font-size: 25rpx;
 }

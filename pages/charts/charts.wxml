@@ -1,9 +1,21 @@
-<view class="container">
+<view>
+<!-- line charts part -->
   <view class="btnContainer">
     <button class="btn" type="default" bindtap="flex" data-state='plus'><image class="img-type" src="/images/zoomIn.png"/></button>
     <button class="btn" type="default" bindtap="flex" data-state='minus'><image class="img-type" src="/images/zoomOut.png"/></button>
   </view>
     <canvas canvas-id="lineCanvas" disable-scroll="false" class="canvas" bindtouchstart="touchHandler" bindtouchend="scrollend" bindtouchmove="scroll" ></canvas>
     <!-- <button type="primary" bindtap="updateData">更新数据</button> -->
+
+
+<!-- choose a btn to draw the line chart -->
+  <view class='para-container'>
+    <view class='para-item' wx:for="{{paras}}" wx:for-item="item" wx:key="key">
+      <view class='texts'>
+        <text class='text-type' >{{item.name}}</text>
+        <!-- <text class='status-type'>{{item.status}}</text> -->
+      </view>
+    </view>
+  </view>
 
 </view>

@@ -5,7 +5,47 @@ Page({
   data: {
     flex:1.5,//[1,2)
     min:10,
-    max:20
+    max:20,
+    paras: [
+      {
+        name: "电导率",
+        data: 321,
+        status: "正常"
+      },
+      {
+        name: "溶解氧",
+        data: 13.74,
+        status: "正常"
+      },
+      {
+        name: "ORP",
+        data: 138,
+        status: "正常"
+      },
+      {
+        name: "氨氮",
+        data: 0.8,
+        status: "正常"
+      },
+      {
+        name: "浊度",
+        data: 14.9,
+        status: "正常"
+      },
+      {
+        name: "pH",
+        data: 9.17,
+        status: "正常"
+      },
+      {
+        name: "温度",
+        data: 23.8,
+        status: "正常"
+      },
+      {
+        name: "速度",
+        data: 1.0,
+      }]
   },
   flex: function (e) {
     var that = this,
