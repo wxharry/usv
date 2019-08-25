@@ -3,3 +3,28 @@
   width: 100%;
   height: 500rpx;
 }
+
+.btnContainer{
+  display: inline-flex;
+  width: 100%;
+  margin: 20rpx;
+  padding-right:0; 
+  
+  /* height: 80rpx; */
+  /* position: absolute; */
+}
+.btn{
+  width: 80rpx;
+  height: 80rpx;
+  padding: 0;
+  margin: 0;
+  /* margin-right: 0; */
+}
+
+.img-type{
+  line-height: 80rpx;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0;
+  padding: 0;
+}

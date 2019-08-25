@@ -629,9 +629,9 @@ function fixColumeData(points, eachSpacing, columnLen, index, config, opts) {
 function getXAxisPoints(categories, opts, config) {
     var yAxisTotalWidth = config.yAxisWidth + config.yAxisTitleWidth;
     var spacingValid = opts.width - 2 * config.padding - yAxisTotalWidth;
-    var dataCount = opts.enableScroll ? Math.min(10, categories.length) : categories.length;
+    // var dataCount = opts.enableScroll ? Math.min(10, categories.length) : categories.length;
+    var dataCount = opts.enableScroll ? categories.length*((2-opts.flex).toFixed(1)==0 ? 1:(2-opts.flex).toFixed(1)) : categories.length;
     var eachSpacing = spacingValid / dataCount;
-
     var xAxisPoints = [];
     var startX = config.padding + yAxisTotalWidth;
     var endX = opts.width - config.padding;
@@ -1918,6 +1918,7 @@ var Charts = function Charts(opts) {
     opts.extra = opts.extra || {};
     opts.legend = opts.legend === false ? false : true;
     opts.animation = opts.animation === false ? false : true;
+    opts.flex = opts.flex || 1
     var config$$1 = assign({}, config);
     config$$1.yAxisTitleWidth = opts.yAxis.disabled !== true && opts.yAxis.title ? config$$1.yAxisTitleWidth : 0;
     config$$1.pieChartLinePadding = opts.dataLabel === false ? 0 : config$$1.pieChartLinePadding;
@@ -1941,6 +1942,9 @@ var Charts = function Charts(opts) {
 
 Charts.prototype.updateData = function () {
     var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    this.opts.flex = data.flex || this.opts.flex;   //更新放大比例
+    this.scrollOption.currentOffset = 0;            //重置移动距离
+
 
     this.opts.series = data.series || this.opts.series;
     this.opts.categories = data.categories || this.opts.categories;

@@ -8,3 +8,6 @@ https://github.com/xiaolin3303/wx-charts
 
 参考修改插件关于动态改变间隔宽度
 https://blog.csdn.net/weixin_41075012/article/details/100056624
+
+图标来源
+https://www.iconfont.cn
