@@ -14,41 +14,73 @@ Page({
       {
         name: "电导率",
         data: 321,
-        status: "正常"
+        status: "正常",
+        norm:{
+          max:5000,
+          min:0
+        }
       },
       {
         name: "溶解氧",
         data: 13.74,
-        status: "正常"
+        status: "正常",
+        norm: {
+          max: 20,
+          min: 2
+        }
       },
       {
         name: "ORP",
         data: 138,
-        status: "正常"
+        status: "正常",
+        norm: {
+          max: 1500,
+          min: 50
+        }
       },
       {
         name: "氨氮",
         data: 0.8,
-        status: "正常"
+        status: "正常",
+        norm: {
+          max: 2,
+          min: 0
+        }
       },
       {
         name: "浊度",
         data: 14.9,
-        status: "正常"
+        status: "正常",
+        norm: {
+          max: 5000,
+          min: 0
+        }
       },
       {
         name: "pH",
         data: 9.17,
-        status: "正常"
+        status: "正常",
+        norm: {
+          max: 9,
+          min: 6
+        }
       },
       {
         name: "温度",
         data: 23.8,
-        status: "正常"
+        status: "正常",
+        norm: {
+          max: 50,
+          min: 5
+        }
       },
       {
         name: "速度",
         data: 1.0,
+        norm: {
+          max: 5,
+          min: 0
+        }
       }],
     markers: [{
       iconPath: "/images/icon.png",
@@ -99,15 +131,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
     var that = this
-
     // setTimeout(function () {
     //   that.setData({
     //     "markers[0].longitude": that.data.markers[0].longitude + 0.000001,
@@ -119,7 +149,7 @@ Page({
     // }, 1500) //延迟时间 这里是1秒
 
     wx.request({ 
-      url: 'http://183.199.190.129:8000/show_data/',
+      url: 'http://49.234.116.74:8000/show_data/',
       data: '',
       header: {},
       method: 'GET',
@@ -141,7 +171,9 @@ Page({
             "paras[6].data": data.temperature,
             "paras[7].data": data.vel,
             "markers[0].longitude": data.longitude,
-            "markers[0].latitude": data.latitude
+            "markers[0].latitude": data.latitude,
+            "map.longitude": data.longitude,
+            "map.latitude": data.latitude
           })
         }
         else {
@@ -155,7 +187,7 @@ Page({
         
       },
     })
-    // this.onReady()//自动更新
+    this.onReady()//自动更新
   },
 
   /**
