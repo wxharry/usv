@@ -1,6 +1,6 @@
 /* pages/data/data.wxss */
 .map{
-  position: fixed;
+  /* position: fixed; */
   top: 0rpx;
   left: 0rpx;
   height: 375rpx;
@@ -33,7 +33,7 @@
 
 
 .para-container{
-  position: fixed;
+  /* position: fixed; */
   padding: 0 35rpx;
   /* top: 667rpx; */
   top:620rpx;
@@ -68,18 +68,6 @@
   font-size: 25rpx;
 }
 
-/* .nav-type{
-  border-radius: 30rpx;
-  box-shadow: gray;
-  padding: 10rpx 310rpx;
-  margin: 10rpx 40rpx;
-  background-color: rgba(241, 120, 120, 0.1);
-  position: fixed;
-  height: 50rpx;
-  width: 50rpx;
-  bottom:50rpx;
-} */
-
 .nav-type{
   text-align: center;
   line-height: 50rpx;
@@ -87,8 +75,8 @@
   box-shadow:black;
   padding: 0 20rpx;
   margin: 10rpx 40rpx;
-  background-color: rgba(241, 120, 120, 0.1);
-  position: fixed;
+  background-color: rgba(241, 120, 120, 0.5);
+  /* position: fixed; */
   height: 60rpx;
   width: 630rpx;
   bottom:50rpx;

@@ -1,6 +1,6 @@
 <!-- pages/data/data.wxml -->
   <!-- start -->
-<view>
+<view class="container">
   <map class='map' id="map" longitude="{{map.longitude}}" latitude="{{map.latitude}}" scale="20" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap"  bindregionchange="regionchange" show-location style="width: 100%; height: 300px;">
   <cover-view  class='battery'>
     <cover-view class='battery-type'>{{battery}}

@@ -15,6 +15,4 @@ https://www.iconfont.cn
 
 TODO list:
 to beautify the front page and other pages
-to decide whether data is common
-
 
