@@ -8,7 +8,7 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
     <view class='btn-start' animation='bounceOut' >
-      <button bindtap='tapbtn'>启动</button>
+      <button class="btn-type" bindtap='tapbtn'>启动</button>
     </view>
   </view>
 </view>

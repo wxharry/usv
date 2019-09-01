@@ -18,7 +18,14 @@
   color: rgba(16, 16, 16, 1);
   font-size: 28px;
   font-family: Arial;
+  /* border-radius: 20rpx; */
 }
+.btn-type{
+  /* background-color: rgba(241, 120, 120, 0.5); */
+  background-color: rgba(241, 120, 120, 0.04);
+
+}
+
 
 .userinfo {
   display: flex;

@@ -27,11 +27,11 @@
 }
 
 .para-container{
-  position: fixed;
+  /* position: fixed; */
   padding: 0 35rpx;
   /* top: 667rpx; */
-  top:620rpx;
-  left: 0rpx;
+  /* top:620rpx; */
+  /* left: 0rpx; */
   width: 750rpx;
   display: block;
 }

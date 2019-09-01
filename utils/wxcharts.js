@@ -1944,12 +1944,13 @@ Charts.prototype.updateData = function () {
     var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     this.opts.flex = data.flex || this.opts.flex;   //更新放大比例
     this.scrollOption.currentOffset = 0;            //重置移动距离
-
+    // this.opts.animation = data.animation || this.opts.animation;
+    this.opts.animation = false
 
     this.opts.series = data.series || this.opts.series;
     this.opts.categories = data.categories || this.opts.categories;
 
-    this.opts.yAxis = data.yAxis || this.opts.yAxis;//改变y轴的取值范围
+    this.opts.yAxis = data.yAxis || this.opts.yAxis;//改变y轴数据
 
     this.opts.title = assign({}, this.opts.title, data.title || {});
     this.opts.subtitle = assign({}, this.opts.subtitle, data.subtitle || {});

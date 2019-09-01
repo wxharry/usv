@@ -7,8 +7,8 @@ Page({
   data: {
     battery:100,
     map:{
-      longitude:121.40170584,
-      latitude:31.31244167
+      longitude: 121.3895035 + 0.0042,
+      latitude: 31.31570244 - 0.002
     },
     paras: [
       {
@@ -85,8 +85,8 @@ Page({
     markers: [{
       iconPath: "/images/icon.png",
       id: 0,
-      latitude: 31.31244167,
-      longitude: 121.40170584,
+      longitude: 121.3895035 + 0.0042,
+      latitude: 31.31570244 - 0.002,
       // latitude:31.31617737
       // longitude:121.38876343
       width: 30,
@@ -119,13 +119,13 @@ Page({
   },
 
   regionchange(e) {
-    console.log(e.type)
+    // console.log(e.type)
   },
   markertap(e) {
-    console.log(e.markerId)
+    // console.log(e.markerId)
   },
   controltap(e) {
-    console.log(e.controlId)
+    // console.log(e.controlId)
   },
 
   /**
@@ -138,16 +138,12 @@ Page({
    */
   onReady: function () {
     var that = this
-    // setTimeout(function () {
-    //   that.setData({
-    //     "markers[0].longitude": that.data.markers[0].longitude + 0.000001,
-    //     "markers[0].latitude": that.data.markers[0].latitude,
-    //     "map.longitude": that.data.map.longitude + 0.000001,
-    //     "map.latitude": that.data.map.latitude
-    //   })//要延时执行的代码
-    //   console.log(that.data.markers[0].longitude)
-    // }, 1500) //延迟时间 这里是1秒
-
+    // that.setData({
+    //   "markers[0].longitude": data.testPos.longitude+0.0042,
+    //   "markers[0].latitude": data.testPos.latitude-0.002,
+    //   "map.longitude": data.testPos.longitude+0.0042,
+    //   "map.latitude": data.testPos.latitude-0.002
+    // })
     wx.request({ 
       url: 'http://49.234.116.74:8000/show_data/',
       data: '',
@@ -157,8 +153,8 @@ Page({
       responseType: 'text',
       success: function (res) {
         if (res.statusCode == 200) {
-          console.log("success")
-          console.log(res)
+          // console.log("success")
+          // console.log(res)
           var data = res.data
           that.setData({
             battery: data.battery,
@@ -170,24 +166,30 @@ Page({
             "paras[5].data": data.ph,
             "paras[6].data": data.temperature,
             "paras[7].data": data.vel,
-            "markers[0].longitude": data.longitude,
-            "markers[0].latitude": data.latitude,
-            "map.longitude": data.longitude,
-            "map.latitude": data.latitude
+            "markers[0].longitude": data.longitude+0.0042,
+            "markers[0].latitude": data.latitude-0.002,
+            "map.longitude": data.longitude+0.0042,
+            "map.latitude": data.latitude-0.002
           })
+          // console.log("longitude: " + that.data.map.longitude - 0.0042)
+          // console.log("latitude: " + that.data.map.latitude + 0.002)
+          console.log(that.data.map)
         }
         else {
           console.log(res.statusCode)
         }
       },
       fail: function (res) {
-        console.log("fail")
+        console.log(res.statusCode)
       },
       complete: function (res) {
         
       },
     })
-    this.onReady()//自动更新
+    setTimeout(function(){
+      that.onReady()//自动更新
+    }, 1000)
+    // that.onReady()//自动更新
   },
 
   /**

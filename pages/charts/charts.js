@@ -148,10 +148,11 @@ Page({
   //从data中获取数据
   getData:function(idx){
     var that = this
+    var item = that.data.allData[idx]
     var categories = [];
     // var idx = that.data.selectChart
-    var len = that.data.allData[idx].data.length
-    var data = that.data.allData[idx].data
+    var len = item.data.length
+    var data = item.data
     for (var i = 0; i < len; i++) {
       categories.push(i);//横坐标各点的名称
       // data.push(Math.random() * (20 - 10) + 10);//该横坐标下的值
@@ -163,37 +164,76 @@ Page({
   },
   //更新数据
   updateData: function (e) {
-    console.log(e.currentTarget.dataset.idx);
-    var that = this;
-    var idx = e.currentTarget.dataset.idx
-    // var simulationData = this.createSimulationData();
-    var item = that.data.allData[idx];
-    var getData = this.getData(idx)
-    var series = [{
-      name: item.name,
-      data: getData.data,
-      format: function (val, name) {
-        return val.toFixed(1) + item.unit;
-      }
-    }];
-    console.log(item.max)
-    var yAxis= {
-      title: item.name + (item.unit=='' ? '' : '('+ item.unit +')'),//如果指标没有单位，则不显示括号
-      format: function (val) {
-        return val.toFixed(1);
-      },
-    };
-    console.log(yAxis.max)
+    // console.log(e.currentTarget.dataset.idx);
+    // var that = this;
+    // var idx = e.currentTarget.dataset.idx
+    // // var simulationData = this.createSimulationData();
+    // var item = that.data.allData[idx];
+    // var getData = this.getData(idx)
+    // var series = [{
+    //   name: item.name,
+    //   data: getData.data,
+    //   format: function (val, name) {
+    //     return val.toFixed(1) + item.unit;
+    //   }
+    // }];
+    // console.log(item.max)
+    // var yAxis= {
+    //   title: item.name + (item.unit=='' ? '' : '('+ item.unit +')'),//如果指标没有单位，则不显示括号
+    //   format: function (val) {
+    //     return val.toFixed(1);
+    //   },
+    // };
+    // console.log(yAxis.max)
     lineChart.updateData({
-      categories: getData.categories,
-      series: series,
-      yAxis: yAxis
+      // categories: getData.categories,
+      // series: series,
+      // yAxis: yAxis,
+      animation: false
     });
+  },
+
+  //切换表格
+  chgChart:function(e){
+    var idx = e.currentTarget.dataset.idx
+    this.setData({
+      selectChart:idx
+    }),
+    this.onLoad()
+    // console.log(e.currentTarget.dataset.idx);
+    // var that = this;
+    // var idx = e.currentTarget.dataset.idx
+    // // var simulationData = this.createSimulationData();
+    // var item = that.data.allData[idx];
+    // var getData = this.getData(idx)
+    // var series = [{
+    //   name: item.name,
+    //   data: getData.data,
+    //   format: function (val, name) {
+    //     return val.toFixed(1) + item.unit;
+    //   }
+    // }];
+    // console.log(item.max)
+    // var yAxis= {
+    //   title: item.name + (item.unit=='' ? '' : '('+ item.unit +')'),//如果指标没有单位，则不显示括号
+    //   format: function (val) {
+    //     return val.toFixed(1);
+    //   },
+    // };
+    // console.log(yAxis.max)
+    // lineChart.updateData({
+    //   categories: getData.categories,
+    //   series: series,
+    //   yAxis: yAxis,
+    //   animation: false
+    // });
   },
   
   onLoad: function (e) {
     var that = this;
-    var idx = that.data.selectChart
+    var idx = that.data.selectChart;
+    var item = that.data.allData[idx];
+    // console.log(item)
     var windowWidth = 320;
     try {
       var res = wx.getSystemInfoSync();
@@ -202,29 +242,29 @@ Page({
       console.error('getSystemInfoSync failed!');
     } 
     // var simulationData = this.createSimulationData();
-    var getData = this.getData(0)
+    var getData = this.getData(idx)
     lineChart = new wxCharts({
       canvasId: 'lineCanvas',
       type: 'line',
       enableScroll:true,
       categories: getData.categories,
-      // animation: true,//记得打开动画
+      // animation: false,
       // background: '#f5f5f5',
       series: [{//可显示多条数据的折现
-        name: that.data.allData[idx].name,
-          data: getData.data,
-          format: function (val, name) {
-            return val.toFixed(1) + 'μs/cm';
-          }
-        }],
+        name: item.name,
+        data: getData.data,
+        format: function (val, name) {
+          return val.toFixed(1) + item.unit;
+        }
+      }],
       xAxis: {
           disableGrid: true,
       },
       yAxis: {
-        title: '电导率 (μs/cm)',
-          format: function (val) {
-              return val.toFixed(1);
-          },
+        title: item.name + (item.unit == '' ? '' : '(' + item.unit + ')'),//如果指标没有单位，则不显示括号
+        format: function (val) {
+            return val.toFixed(1);
+        },
       },
       width: windowWidth,
       height: 200,

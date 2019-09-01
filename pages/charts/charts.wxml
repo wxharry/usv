@@ -10,7 +10,7 @@
 
 <!-- choose a btn to draw the line chart -->
   <view class='para-container'>
-    <view class='para-item' wx:for="{{paras}}" wx:for-item="item" wx:key="key" wx:for-index='idx' bindtap="updateData" data-idx='{{idx}}'>
+    <view class='para-item' wx:for="{{paras}}" wx:for-item="item" wx:key="key" wx:for-index='idx' bindtap="chgChart" data-idx='{{idx}}'>
       <view class='texts'>
         <text class='text-type' >{{item.name}}</text>
         <!-- <text class='status-type'>{{item.status}}</text> -->
