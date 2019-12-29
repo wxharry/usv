@@ -1,0 +1,105 @@
+/* pages/data/data.wxss */
+.map{
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 95%;
+}
+
+.battery{
+  z-index: 20;
+  width: 90rpx;
+  height: 60rpx;
+  position: fixed;
+  top:30rpx;
+  right: 40rpx;
+  align-items: center;
+}
+
+.battery-type{
+  padding-left: 20rpx; 
+  font-size: 25rpx;
+  line-height: 60rpx;
+  align-self: center;
+}
+
+.img-type{
+  width: 90rpx;
+  height: 60rpx;
+  position: fixed;
+  top:30rpx;
+  right: 40rpx;
+}
+
+.loc-icon{
+  z-index: 99;
+  position: fixed;
+  top: 78%;
+  right: 5%;
+  height: 60rpx;
+  width: 60rpx;
+}
+
+
+
+.moveablePanel{
+  position: fixed;
+  padding-top: 80rpx;
+  padding-bottom: 70rpx;
+  height: 650rpx;
+  width: 100%;
+  top: 85%;
+  background: repeating-linear-gradient(rgba(236, 146, 146, 0.6)9%, rgba(255, 234, 234, 0.8) 15%, rgba(241, 120, 120, 0.55) 100%);
+  /* background-color:rgb(241, 120, 120, 0.5); */
+  border-radius: 30rpx;
+  box-shadow: black;
+  z-index: 90;
+}
+
+.para-container{
+  /* background-color: rgba(255,255,255, 0.5); */
+  height: 500rpx;
+  padding: 0 35rpx;
+  width: 100%;
+  display: block;
+}
+
+.para-item{
+  width: 300rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  margin: 5rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  padding: 15rpx;
+  background-color: rgba(241, 120, 120, 0.04);
+  border-radius: 20rpx;
+}
+
+.texts{
+  display: inline;
+}
+
+.text-type{
+  float: left;
+}
+
+.status-type{
+  float: right;
+  line-height: 40rpx;
+  font-size: 25rpx;
+}
+
+.nav-type{
+  position: fixed;
+  z-index: 99;
+  text-align: center;
+  box-shadow:black;
+  background-color: rgba(241, 120, 120, 0.98);
+  line-height: 100rpx;
+  height: 100rpx;
+  width: 100%;
+  bottom: 0;
+}
+

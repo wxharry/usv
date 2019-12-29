@@ -1,7 +1,8 @@
 <!-- pages/data/data.wxml -->
   <!-- start -->
 <view class="container">
-  <map id="locationMap" class='map' id="map" longitude="{{map.longitude}}" latitude="{{map.latitude}}" scale="18" bindtap="tap" bindcontroltap="controltap" markers="{{markers}}" bindtouchstart="touch" bindmarkertap="markertap"  bindregionchange="regionchange" show-location>
+  <map id="myMap" class='map' longitude="{{map.longitude}}" latitude="{{map.latitude}}" scale="{{scale}}" markers="{{markers}}" bindtouchstart="touch" bindregionchange="regionchange" show-location>
+  
   <cover-view  class='battery'>
     <cover-view class='battery-type'>{{battery}}
         <!-- <image class='img-type' src='/images/battery.png'/> -->
@@ -10,8 +11,7 @@
     <cover-image class='img-type' src='/images/battery.png'/>
   </cover-view>
   </map>
-
-
+  <image src="/images/locate.png" class="loc-icon" bindtap="tap" animation="{{animation}}" ></image>
 <!-- 实时数据展示 -->
   <view class='moveablePanel'animation="{{animation}}"  bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd' bindtap="tapPanel">
     <view class='para-container'>
@@ -26,6 +26,6 @@
 
 
 <!-- 绘制折线图 -->
-  <navigator class="nav-type" url="../charts/charts">点击绘制折线图</navigator>
+  <navigator class="nav-type" url="/pages/detail/detail">点击绘制折线图</navigator>
   <!-- <image class="nav-type" bindtap="navigateTo" src="../../images/lineChart.png"></image> -->
 </view>

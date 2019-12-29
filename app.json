@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/data_new/data_new",
+    "pages/detail/detail",
+    "pages/data/data",
     "pages/index/index",
     "pages/charts/charts",
-    "pages/data/data",
     "pages/logs/logs"
   ],
   "window": {

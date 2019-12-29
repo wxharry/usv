@@ -1,0 +1,22 @@
+<view>
+  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{paras}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+      <view class="navTab.{{activeTab == idx ?'active':''}}"  data-idx="{{idx}}" bindtap="switchNav">
+        {{item.name}}
+      </view>
+    </block>
+  </scroll-view>
+<!-- line charts part -->
+<view class="content-container">
+  <view class="chart-title">{{paras[activeTab].name}}折线图</view>
+  <canvas canvas-id="lineCanvas" disable-scroll="false" class="canvas" bindtouchstart="touchStartHandle" bindtouchend="scrollend" bindtouchmove="touchMoveHandle"></canvas>
+
+
+  <view class="text-container">
+  <view class="text-title">水质分析</view>
+    <view class="text-style">{{allData[activeTab].txt}}</view>
+    <!-- <text>{{context}}</text> -->
+  </view>
+</view>
+
+</view>
