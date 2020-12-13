@@ -22,7 +22,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.8.0",
 	"appid": "wx13922807b04efbe1",
-	"projectname": "strikingBird",
+	"projectname": "thornBird",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
